@@ -12,7 +12,7 @@ insertion_test = []
 100.times do |i|
   insertion_test[i] = (0...1000).map{ rand(0...1000) } 
 end
-selection_test = insertion_test.dup
+selection_test = insertion_test.map{ |arr| arr.dup}
 
 Benchmark.bm do |x|
   x.report ("Insertion:"){ 
